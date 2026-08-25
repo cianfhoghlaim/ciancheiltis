@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "change_id": "2026-09-25-ciancheiltis-init-v1",
+  "phase": "4.0",
+  "sister_repo": "ciancheiltis",
+  "generated_at": "2026-08-25T19:41:58.919608+00:00",
+  "python_version": "3.9.6",
+  "dlt_sources_dir": "dlt_sources",
+  "total_subtrees": 5,
+  "ok_count": 2,
+  "fail_count": 3,
+  "total_duration_ms": 293,
+  "overall_duration_ms": 295,
+  "results": [
+    {
+      "subtree": "_cross",
+      "status": "ok",
+      "error": null,
+      "duration_ms": 0
+    },
+    {
+      "subtree": "common",
+      "status": "ok",
+      "error": null,
+      "duration_ms": 0
+    },
+    {
+      "subtree": "cultural_heritage",
+      "status": "fail",
+      "error": "TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'",
+      "duration_ms": 275
+    },
+    {
+      "subtree": "language",
+      "status": "fail",
+      "error": "ImportError: bs4: No module named 'bs4'",
+      "duration_ms": 18
+    },
+    {
+      "subtree": "lexicographic",
+      "status": "fail",
+      "error": "ImportError: bs4: No module named 'bs4'",
+      "duration_ms": 0
+    }
+  ]
+}
