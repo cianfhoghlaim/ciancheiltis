@@ -5,11 +5,8 @@
 _.python.compile = true
 
 [tasks.ciancheiltis]
-description = "Ciancheiltis root: dev env + smoke test"
+description = "Ciancheiltis root: dev env + smoke test (alias → use :test, :lint, :typecheck, :openspec-validate, :smoke-all)"
 run = "mise run ciancheiltis:test && mise run ciancheiltis:smoke-all"
-
-[tasks.ciancheiltis]
-run = "echo '[ciancheiltis] misfire alias → use ciancheiltis:test, :lint, :typecheck, :openspec-validate, :smoke-all'"
 
 [tasks."ciancheiltis:test"]
 description = "Run the ciancheiltis smoke test"
