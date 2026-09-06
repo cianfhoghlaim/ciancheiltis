@@ -5,3 +5,40 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .DS_Store
+
+# Vendored demo-app assets (Gaois.QueryLogger samples, documentary node_modules)
+**/node_modules/
+**/wwwroot/lib/
+**/wwwroot/lib/bootstrap/**
+**/wwwroot/lib/jquery/**
+**/samples/**/Content/lib/**
+**/samples/**/wwwroot/lib/**
+
+# Source maps
+*.css.map
+*.js.map
+
+# Adobe Illustrator source files (Documental graphics)
+**/graphics/*.ai
+**/graphics/*.png
+**/graphics/*.jpg
+
+# Empty DB templates (terminologue/website/termbaseTemplates/*.sqlite — these are empty starter DBs)
+**/termbaseTemplates/*.sqlite
+
+# Tearma data dumps — re-download from tearma.ie (download-on-demand, see context/README.md)
+**/ioslodail/*.zip
+**/ioslodail/*.tbx
+**/ioslodail/*.txt
+
+# Linguistic study PDFs — re-download from DCU Gaois (download-on-demand, see context/README.md)
+context/gaeilge/*.pdf
+
+# Large decorative images (terminologue intro screenshots, tearma site graphics, documental artwork)
+**/docs/intro*.png
+**/eolas/*.jpg
+**/eolas/*.jpeg
+**/cabhair/*.jpg
+**/cabhair/*.jpeg
+**/static/images/*.jpg
+**/static/images/*.png
