@@ -1,13 +1,4 @@
-# Ciancheiltis Umbrella Specification
-
-## Purpose
-
-The ciancheiltis umbrella spec defines the 6-phase Celtic-language coverage of the
-`ciancheiltis` sister repo. Each phase pairs an English-facing agent with one Celtic
-language (Cornish, Irish, Northern Irish, Scottish Gaelic, Manx, Breton) and the
-canonical jurisdictional carve rule.
-
-## Requirements
+## ADDED Requirements
 
 ### Requirement: ciancheiltis owns 6 Celtic-language phase specs
 

@@ -43,6 +43,9 @@ the Ainmean-Àite na h-Alba ( Gaelic placenames) corpus.
 
 ### Requirement: The Scottish Gaelic phase exposes the 6 sub-phase surfaces
 
+The `ciancheiltis-en-gd` phase SHALL expose 6 sub-phase surfaces, each backed by a
+canonical ADK agent under `agents/teanga/src/teanga/agents/`:
+
 | Sub-phase | Agent slug | Tool |
 |-----------|------------|------|
 | Corpus search | `celtic_corpus_search_agent` (shared) | `celtic_corpus_search` |
@@ -52,8 +55,23 @@ the Ainmean-Àite na h-Alba ( Gaelic placenames) corpus.
 | HTR | `duchas_htr_agent` (shared) | `duchas_htr` |
 | Translation | `scottish_gaelic_translation_agent` | `gaelic_translate` |
 
-The `scottish_gaelic_translation_agent` uses the shared `gaelic_translate` tool with
-`source_lang="en"`, `target_lang="gla"` (or vice versa) per the `TEANGA_MODEL_REGISTRY`.
+The `scottish_gaelic_translation_agent` SHALL use the shared `gaelic_translate` tool
+with `source_lang="en"`, `target_lang="gla"` (or vice versa) per the `TEANGA_MODEL_REGISTRY`.
+
+#### Scenario: The Scottish Gaelic translation agent uses the shared gaelic_translate tool
+
+- **GIVEN** the consumer dispatches an EN ↔ gla translation request
+- **WHEN** the dispatcher routes the request
+- **THEN** the dispatcher SHALL route to `scottish_gaelic_translation_agent`
+- **AND** the agent SHALL use the shared `gaelic_translate` tool with `source_lang="en"`,
+  `target_lang="gla"` (or vice versa)
+
+#### Scenario: The Scottish Gaelic toponym resolution uses the gb-sct subset
+
+- **GIVEN** the consumer requests toponym resolution for a Gàidhlig placename
+- **WHEN** the `toponym_resolution_agent` is dispatched
+- **THEN** the agent SHALL use the `toponym_resolver` tool with the `gb-sct` subset flag
+- **AND** the tool SHALL query Ainmean-Àite na h-Alba under the ciancheiltis DLT carve-out
 
 ### Requirement: The Scottish Gaelic phase declares its upstream DLT sources
 

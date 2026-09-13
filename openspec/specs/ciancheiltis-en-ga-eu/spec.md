@@ -50,6 +50,9 @@ Brud Nevez corpus, and the UD-Breton treebank.
 
 ### Requirement: The Breton phase exposes the 6 sub-phase surfaces
 
+The `ciancheiltis-en-ga-eu` phase SHALL expose 6 sub-phase surfaces, each backed by a
+canonical ADK agent under `agents/teanga/src/teanga/agents/`:
+
 | Sub-phase | Agent slug | Tool |
 |-----------|------------|------|
 | Corpus search | `celtic_corpus_search_agent` (shared) | `celtic_corpus_search` |
@@ -58,6 +61,22 @@ Brud Nevez corpus, and the UD-Breton treebank.
 | Toponym resolution | `toponym_resolution_agent` (shared, fr-bre subset) | `toponym_resolver` |
 | HTR | `duchas_htr_agent` (shared, Breton historical manuscripts) | `duchas_htr` |
 | Translation | `breton_translation_agent` | `gaelic_translate` |
+
+#### Scenario: The Breton translation agent uses the shared gaelic_translate tool
+
+- **GIVEN** the consumer dispatches an EN ↔ bre translation request
+- **WHEN** the dispatcher routes the request
+- **THEN** the dispatcher SHALL route to `breton_translation_agent`
+- **AND** the agent SHALL use the shared `gaelic_translate` tool with `source_lang="en"`,
+  `target_lang="bre"` (or vice versa)
+
+#### Scenario: The Breton toponym resolution uses the fr-bre subset
+
+- **GIVEN** the consumer requests toponym resolution for a Breton placename
+- **WHEN** the `toponym_resolution_agent` is dispatched
+- **THEN** the agent SHALL use the `toponym_resolver` tool with the `fr-bre` subset flag
+- **AND** the tool SHALL query the Breton-language placenames under the ciancheiltis DLT
+  carve-out
 
 ### Requirement: The Breton phase declares its upstream DLT sources
 

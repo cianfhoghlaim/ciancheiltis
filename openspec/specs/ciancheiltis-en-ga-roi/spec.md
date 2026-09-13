@@ -44,6 +44,9 @@ the bilingual educational carve, owned by cianfhoghlaim's `tuatha/subjects/gaeil
 
 ### Requirement: The Irish-ROI phase exposes the 6 sub-phase surfaces
 
+The `ciancheiltis-en-ga-roi` phase SHALL expose 6 sub-phase surfaces, each backed by a
+canonical ADK agent under `agents/teanga/src/teanga/agents/`:
+
 | Sub-phase | Agent slug | Tool |
 |-----------|------------|------|
 | Corpus search | `celtic_corpus_search_agent` | `celtic_corpus_search` |
@@ -53,7 +56,7 @@ the bilingual educational carve, owned by cianfhoghlaim's `tuatha/subjects/gaeil
 | HTR | `duchas_htr_agent` | `duchas_htr` |
 | Translation | `irish_translation_agent` | `gaelic_translate` |
 
-The `irish_translation_agent` uses Unsloth Qwen3.8-27B for high-quality bilingual
+The `irish_translation_agent` SHALL use Unsloth Qwen3.8-27B for high-quality bilingual
 EN ↔ GA translation (per the `TEANGA_MODEL_REGISTRY["qwen3.8-27b-instruct"]` entry).
 
 #### Scenario: The Irish translation agent uses Qwen3.8-27B per the registry

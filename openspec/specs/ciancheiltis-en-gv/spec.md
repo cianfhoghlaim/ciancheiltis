@@ -37,6 +37,9 @@ Ghaelgagh (Manx-medium primary school) curriculum.
 
 ### Requirement: The Manx phase exposes the 6 sub-phase surfaces
 
+The `ciancheiltis-en-gv` phase SHALL expose 6 sub-phase surfaces, each backed by a
+canonical ADK agent under `agents/teanga/src/teanga/agents/`:
+
 | Sub-phase | Agent slug | Tool |
 |-----------|------------|------|
 | Corpus search | `celtic_corpus_search_agent` (shared) | `celtic_corpus_search` |
@@ -46,7 +49,7 @@ Ghaelgagh (Manx-medium primary school) curriculum.
 | HTR | `duchas_htr_agent` (shared, Manx historical manuscripts) | `duchas_htr` |
 | Translation | `manx_translation_agent` | `gaelic_translate` |
 
-The `manx_translation_agent` uses the shared `gaelic_translate` tool with
+The `manx_translation_agent` SHALL use the shared `gaelic_translate` tool with
 `source_lang="en"`, `target_lang="glv"` (or vice versa).
 
 #### Scenario: The Manx translation agent uses MMS 300M for low-resource support
